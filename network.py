@@ -1,6 +1,6 @@
 from pulumi_aws import ec2,get_availability_zones
 import pulumi
-
+#VPC stuff
 config = pulumi.Config()
 data = config.require_object("data")
 
@@ -138,7 +138,7 @@ bastion_sg = ec2.SecurityGroup(
     },
 )
 
-
+#bastion not asked but nice to have
 ami = ec2.get_ami(
         most_recent="true",
         owners=["amazon"],
